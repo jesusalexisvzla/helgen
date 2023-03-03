@@ -1,0 +1,31 @@
+<div class="navbar nav" [ngClass]="{'justifyCenter': currentUserRole != 'operador', 'justifyEnd': currentUserRole == 'operador'}">
+    <div *ngIf="currentUserRole != 'operador'" class="dropdown alignCenter pl-2">
+        <button class="btn" >Select Buses</button>
+        <div class="dropdown-content">
+            <form>
+                <div class="flex" *ngFor="let bus of buses">
+                    <input type="checkbox" [id]="bus._id" value="second_checkbox" (click)="selectBus(bus._id)"> <label [for]="bus._id">{{bus.name}}</label>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="alignCenter logout">
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="emitContainer(false)">
+                <mat-icon>directions</mat-icon>
+                <span>Map</span>
+            </button>
+            <button mat-menu-item (click)="emitContainer(true)">
+                <mat-icon>group</mat-icon>
+                <span>Users</span>
+            </button>
+            <button mat-menu-item (click)="logout()">
+                <mat-icon>dialpad</mat-icon>
+                <span>Logout</span>
+            </button>
+        </mat-menu>
+    </div>
+</div>

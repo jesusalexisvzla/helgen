@@ -1,0 +1,37 @@
+###
+POST http://localhost:9000/api/positionLogs HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "38065"
+}
+
+###
+GET http://localhost:9000/api/positionLogs?{"properties":[ "vehicle", "vehicle", "vehicle" ],"value": ["6400179f78e9ca886724433e", "640017e978e9ca8867244341", "640017fa78e9ca8867244343"], "options": {"manyValues": true}} HTTP/1.1
+
+###
+GET http://localhost:9000/api/positionLogs? HTTP/1.1
+Content-Type: application/json
+
+{
+    "properties": [ "vehicle" ],
+    "value": "64001a8093fe7e8479cd34f2"
+}
+
+###
+GET http://localhost:9000/api/users/63fac098a8aec05f36185f22 HTTP/1.1
+
+###
+PUT http://localhost:9000/api/users/63fab8075b0a8484a73047c5 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "jose",
+    "email": "jose@gmail.com",
+    "password": "puroparkdur0G",
+    "role": "admin",
+    "isActive": false
+}
+
+###
+DELETE http://localhost:9000/api/users/63fab8b34d0f7647419417e7 HTTP/1.1

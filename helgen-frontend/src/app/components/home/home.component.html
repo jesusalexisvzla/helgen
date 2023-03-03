@@ -1,0 +1,5 @@
+<div class="App">
+    <app-navbar (messageEvent)="receiveMessage($event)" (userPanel)="receivePanel($event)"></app-navbar>
+    <app-map [events]="eventsSubject.asObservable()" *ngIf="!showUserContainer"></app-map>
+    <app-users *ngIf="showUserContainer"></app-users>
+</div>
