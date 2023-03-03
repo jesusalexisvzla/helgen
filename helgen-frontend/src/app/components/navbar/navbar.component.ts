@@ -18,13 +18,15 @@ export class NavbarComponent implements OnInit, AfterViewInit {
 
   public currentUserRole = this.apiService.currentUserRole
 
+  public showMaps = localStorage.getItem('lastRouteUsed') == 'maps' ? true : (!localStorage.getItem('lastRouteUsed') && this.currentUserRole != 'admin');
+
   constructor(
     public apiService: ApiService,
     public routerService: Router
   ) { }
 
   ngOnInit(): void {
-    console.log(this.routerService.url)
+    console.log(localStorage.getItem('lastRouteUsed'))
   }
 
   ngAfterViewInit() {
@@ -56,6 +58,8 @@ export class NavbarComponent implements OnInit, AfterViewInit {
   }
 
   emitContainer(value: boolean): void {
+    localStorage.setItem('lastRouteUsed', ( value ? 'users' : 'maps' ))
+    this.showMaps = !value;
     this.userPanel.emit(value);
   }
 

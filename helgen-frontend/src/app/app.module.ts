@@ -15,7 +15,7 @@ import { LoginComponent } from './components/login/login.component';
 import {MatButtonModule} from '@angular/material/button';
 import { UsersModule } from './components/users/users.module';
 import { MaterialModule } from './core/material/material.module';
-
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 const rutas: Routes = [
   {
@@ -55,7 +55,8 @@ const rutas: Routes = [
     }),
     MatButtonModule,
     UsersModule,
-    MaterialModule
+    MaterialModule,
+    MatProgressSpinnerModule
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]

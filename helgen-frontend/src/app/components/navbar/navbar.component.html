@@ -1,6 +1,6 @@
-<div class="navbar nav" [ngClass]="{'justifyCenter': currentUserRole != 'operador', 'justifyEnd': currentUserRole == 'operador'}">
-    <div *ngIf="currentUserRole != 'operador'" class="dropdown alignCenter pl-2">
-        <button class="btn" >Select Buses</button>
+<div class="navbar nav" [ngClass]="{'justifyCenter': currentUserRole != 'operador' || showMaps, 'justifyEnd': currentUserRole == 'operador' || !showMaps}">
+    <div *ngIf="currentUserRole != 'operador' && showMaps" class="dropdown alignCenter pl-2">
+        <button class="btn" >View By Selected Buses</button>
         <div class="dropdown-content">
             <form>
                 <div class="flex" *ngFor="let bus of buses">
@@ -18,7 +18,7 @@
                 <mat-icon>directions</mat-icon>
                 <span>Map</span>
             </button>
-            <button mat-menu-item (click)="emitContainer(true)">
+            <button *ngIf="currentUserRole == 'admin'" mat-menu-item (click)="emitContainer(true)">
                 <mat-icon>group</mat-icon>
                 <span>Users</span>
             </button>

@@ -13,6 +13,8 @@ import { ApiService } from '../../services/api/api.service';
 })
 export class MapComponent implements OnInit, AfterViewInit, OnDestroy {
 
+  public isLoading = false;
+
   map: Map | undefined;
 
   @ViewChild('map')
@@ -36,6 +38,7 @@ export class MapComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit() {
+    this.isLoading = true;
     this.map = new Map({
       container: this.mapContainer.nativeElement,
       style: `https://api.maptiler.com/maps/streets-v2/style.json?key=BnD7OQXtAP6XWSZzaQ5s`,
@@ -53,7 +56,7 @@ export class MapComponent implements OnInit, AfterViewInit, OnDestroy {
 
   setListeners() {
     this.eventsSubscription = this.events.subscribe((data) => {
-      console.log(data)
+      this.isLoading = true;
       const busses = data
       let properties: any = []
       for (const bus of busses) {
@@ -94,6 +97,7 @@ export class MapComponent implements OnInit, AfterViewInit, OnDestroy {
         .addTo(this.map);
       }
     }
+    this.isLoading = false;
   }
 
   ngOnDestroy() {

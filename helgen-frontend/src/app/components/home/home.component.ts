@@ -12,8 +12,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   @ViewChild(NavbarComponent) navBar;
   
-  public selectedBuses = []
-  public showUserContainer = false;
+  public selectedBuses = [];
+  public currentUserRole = this.apiService.currentUserRole
+  public showUserContainer = localStorage.getItem('lastRouteUsed') == 'users' ? true : (!localStorage.getItem('lastRouteUsed') && this.currentUserRole == 'admin');;
   
   public eventsSubject: Subject<void> = new Subject<void>();
   constructor( 

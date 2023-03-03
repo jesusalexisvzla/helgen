@@ -8,8 +8,9 @@ import { Router } from '@angular/router'
 export class ApiService {
     private url = 'http://localhost:9000/api/'
     public currentUser: any;
-    public currentUserToken = ''
-    public currentUserRole = localStorage.getItem('userRole')
+    public currentUserToken = '';
+    public currentUserRole = localStorage.getItem('userRole');
+    public lastRouteUsed = localStorage.getItem('lastRouteUsed');
     public selectedBuses;
 
     constructor(
@@ -32,6 +33,7 @@ export class ApiService {
         localStorage.removeItem('token')
         localStorage.removeItem('userId')
         localStorage.removeItem('userRole')
+        localStorage.removeItem('lastRouteUsed')
         this.routerService.navigate(['/'])
     }
 

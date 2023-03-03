@@ -59,13 +59,10 @@ export class UserComponent implements OnInit {
             this.hasChanges = true
             this.onNoClick();
           })      
-
-          // this.presentToast('Discount succesfully registered', 'green-snackbar');
         } catch (err) {
           console.log(err);
           this.disableButton = false;
           this.isLoading = false;
-          // this.presentToast('Conection Rejected', 'red-snackbar');
         }
       } else {
         try {
@@ -77,19 +74,16 @@ export class UserComponent implements OnInit {
             this.hasChanges = true
             this.onNoClick();
           })      
-
-          // this.presentToast('Discount succesfully registered', 'green-snackbar');
         } catch (err) {
           console.log(err);
           this.disableButton = false;
           this.isLoading = false;
-          // this.presentToast('Conection Rejected', 'red-snackbar');
         }
       }
     } else {
-      this.disableButton = true;
+      this.disableButton = false;
+      this.isLoading = false;
     }
-    console.log(this.addForm.value)
   }
 
   onNoClick(): void {

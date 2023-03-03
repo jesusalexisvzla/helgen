@@ -41,8 +41,12 @@
 
         <div class="col-md-4">
             <mat-form-field appearance="outline" class="fullWidth">
-                <mat-label for="role">Role</mat-label>
-                <input matInput id="role" formControlName="role" class="form-control" name="role">
+                <mat-label>Role</mat-label>
+                <mat-select formControlName="role">
+                    <mat-option value="admin">Admin</mat-option>
+                    <mat-option value="operador">Operador</mat-option>
+                    <mat-option value="user">User</mat-option>
+                </mat-select>
             </mat-form-field>
         </div>
     </div>
@@ -51,7 +55,7 @@
         <!----------------------->
         <!-- cancel button -->
         <div class=" ml-2">
-            <button class="dBtn" mat-stroked-button style="background-color: #e8e8e8;" matRipple (click)="onNoClick()">
+            <button class="dBtn white" mat-stroked-button matRipple (click)="onNoClick()">
                 <span class="">Cancel</span>
             </button>
         </div>
@@ -59,7 +63,7 @@
         <!----------------------->
         <!-- new button -->
         <div class=" ml-2">
-            <button class="dBtn white" mat-stroked-button matRipple type="submit" [disabled]="disableButton">
+            <button class="dBtn purple" mat-stroked-button matRipple type="submit" [disabled]="disableButton">
                 <span class="">Save</span>
             </button>
         </div>
