@@ -4,8 +4,9 @@ This project has two folder, one for the frontend project and one for the backen
 
 1. Open two terminals or open both folders separately and locate yourself inside each individual project.
 2. Execute "npm install" command on both projects terminal.
-3. Once both projects are installed correctly you can now open your browser and search "http://localhost:4200/" (This should be the route for the project).
-4. Use one of 3 users to login and see and use the project.
+3. Execute "npm start" and "ng serve" on the backend and frontend terminals respectively.
+4. Once both projects are installed correctly you can now open your browser and search "http://localhost:4200/" (This should be the route for the project).
+5. Use one of 3 users to login and see and use the project.
   - Admin user: (email: admin@gmail.com, password: admin) 
     - Admin can access both maps and users components, in which he can: -maps: See the map component with all the markers showing, these markers can be shown or not shown depending if Admin wishes to see them by selected buses, this filter is on the navbar on the left in form of a dropdown.
     - Users: Administrate the users that are registered, Admin can create a user from the "new user" button on which it will open a dialog to fill out new user data, Admin can update an existing user by clicking on the edit button on the desired user, this will open the same dialog but with the form already filled out with the selected users data, Admin can also delete desired user by clicking on delete button.
@@ -13,7 +14,7 @@ This project has two folder, one for the frontend project and one for the backen
     - Operador can only see the map but will be loaded without markers and markers will be disabled.
   - User user: (email: user@gmail.com, password: user)
     - User can see the map component with all the markers showing, these markers can be shown or not shown depending if Admin wishes to see them by selected buses, this filter is on the navbar on the left in form of a dropdown.
-5. When desired user can logout and all credentials will be erased.
+6. When desired user can logout and all credentials will be erased.
 
 **Reasons for the use of certain elements:**
 1. Front End: 
